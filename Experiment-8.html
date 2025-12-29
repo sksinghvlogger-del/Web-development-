@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors Example</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .highlight {
+            color: white;
+            background-color: #0077b6;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        #main-heading {
+            text-align: center;
+            color: darkred;
+            margin-bottom: 20px;
+        }
+        .container p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+        h2, h3 {
+            color: #007f5f;
+            margin-top: 15px;
+        }
+        .box {
+            border: 2px solid #333;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            background-color: #e0ffe0;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">CSS Selectors Demonstration</h1>
+    <div class="container">
+        <h2 class="highlight">Class Selector Example</h2>
+        <p>This paragraph demonstrates the use of a class selector.</p>
+        <div class="box">
+            <p>This paragraph is inside a div with class "container" and "box".</p>
+            <p>Descendant selector styles it through .container p</p>
+        </div>
+        <h2>Group Selector Example</h2>
+        <h3>Another Heading Styled by Group Selector</h3>
+        <p>Multiple headings (h2, h3) share the same style using a group selector.</p>
+        <p>Notice that all elements have zero margin and padding due to the universal selector (*)</p>
+    </div>
+</body>
+</html>

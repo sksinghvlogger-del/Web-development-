@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Web Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            font-size: 1rem;
+            padding: 1rem;
+            background-color: #f0f8ff;
+        }
+        header {
+            background-color: #0077b6;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            flex-direction: column;
+            background-color: #0096c7;
+            margin: 1rem 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem;
+            border-bottom: 1px solid #0077b6;
+        }
+        nav a:hover {
+            background-color: #00b4d8;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+        article {
+            background-color: #caf0f8;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+        }
+        aside {
+            background-color: #ade8f4;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            background-color: #0077b6;
+            color: white;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        @media (min-width: 600px) {
+            nav {
+                flex-direction: row;
+                justify-content: center;
+            }
+            nav a {
+                border-bottom: none;
+                border-right: 1px solid #0077b6;
+            }
+            nav a:last-child {
+                border-right: none;
+            }
+            main {
+                flex-direction: row;
+                gap: 1rem;
+            }
+            article {
+                flex: 2;
+            }
+            aside {
+                flex: 1;
+            }
+        }
+        @media (min-width: 1024px) {
+            body {
+                padding: 2rem 5rem;
+            }
+            header {
+                font-size: 2rem;
+            }
+            article, aside {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Responsive Web Page</h1>
+        <p>Mobile-first design using media queries and flexible units</p>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+    <main>
+        <article>
+            <h2>Main Article</h2>
+            <p>
+                This is the main content area. On mobile, the layout is stacked vertically. 
+                On tablet and desktop screens, the layout switches to a horizontal flex layout.
+            </p>
+        </article>
+        <aside>
+            <h3>Sidebar</h3>
+            <p>
+                This is the sidebar area.
+                 It adjusts its size based on screen width and remains flexible.
+            </p>
+        </aside>
+    </main>
+    <footer>
+        &copy; 2025 Responsive Web Design Example
+    </footer>
+</body>
+</html>
