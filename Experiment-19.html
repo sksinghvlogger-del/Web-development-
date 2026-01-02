@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Drawing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        canvas {
+            background-color: white;
+            border: 2px solid #2563eb;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Assignment 19: Canvas Drawing</h2>
+
+<canvas id="myCanvas" width="400" height="300"></canvas>
+
+<script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // 1. Draw a filled rectangle
+    ctx.fillStyle = "#2563eb"; // blue color
+    ctx.fillRect(50, 50, 100, 60); // x, y, width, height
+
+    // 2. Draw a rectangle border (stroke)
+    ctx.strokeStyle = "#1d4ed8"; // darker blue
+    ctx.strokeRect(200, 50, 100, 60);
+
+    // 3. Draw a filled circle
+    ctx.beginPath();
+    ctx.arc(100, 180, 40, 0, 2 * Math.PI); // x, y, radius, startAngle, endAngle
+    ctx.fillStyle = "#f59e0b"; // orange
+    ctx.fill();
+
+    // 4. Draw a line
+    ctx.beginPath();
+    ctx.moveTo(200, 180); // starting point
+    ctx.lineTo(300, 250); // ending point
+    ctx.strokeStyle = "#10b981"; // green
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    // 5. Draw text
+    ctx.font = "20px Arial";
+    ctx.fillStyle = "#dc2626"; // red
+    ctx.fillText("Canvas Demo", 120, 20);
+</script>
+
+</body>
+</html>

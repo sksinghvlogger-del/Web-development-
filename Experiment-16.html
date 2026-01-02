@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show/Hide & Toggle Class Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #aaa;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #2563eb;
+            color: white;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Assignment 16: Show/Hide & Toggle Class</h2>
+
+<div class="container">
+    <p id="textPara">This paragraph can be hidden or highlighted.</p>
+
+    <!-- Buttons to control paragraph -->
+    <button onclick="toggleVisibility()">Show / Hide Paragraph</button>
+    <button onclick="toggleHighlight()">Toggle Highlight</button>
+</div>
+
+<script>
+    // Show or hide the paragraph
+    function toggleVisibility() {
+        const para = document.getElementById("textPara");
+        if (para.style.display === "none") {
+            para.style.display = "block";
+        } else {
+            para.style.display = "none";
+        }
+    }
+
+    // Toggle CSS class dynamically
+    function toggleHighlight() {
+        const para = document.getElementById("textPara");
+        para.classList.toggle("highlight");
+    }
+</script>
+
+</body>
+</html>

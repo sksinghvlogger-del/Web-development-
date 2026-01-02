@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            width: 400px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #aaa;
+            text-align: center;
+        }
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 80%;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+        p {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>DOM Manipulation Example</h2>
+
+<div class="container">
+    <p id="demoText">This is the original text.</p>
+    <button onclick="changeTextById()">Change Text using getElementById()</button>
+    <button onclick="changeTextByQuery()">Change Text using querySelector()</button>
+    <button onclick="appendText()">Append Text using innerHTML</button>
+</div>
+
+<script>
+    // 1. Change text using getElementById
+    function changeTextById() {
+        document.getElementById("demoText").innerHTML = "Text changed by getElementById()!";
+    }
+
+    // 2. Change text using querySelector
+    function changeTextByQuery() {
+        document.querySelector("#demoText").innerHTML = "Text changed by querySelector()!";
+    }
+
+    // 3. Append text using innerHTML
+    function appendText() {
+        document.getElementById("demoText").innerHTML += " Appending more text with innerHTML.";
+    }
+</script>
+
+</body>
+</html>

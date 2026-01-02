@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Element Manipulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 450px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #aaa;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: #2563eb;
+            color: white;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+        ul {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Assignment 18: Create and Manipulate Elements</h2>
+
+<div class="container">
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="removeItem()">Remove Last Item</button>
+    <button onclick="modifyItem()">Modify First Item</button>
+
+    <ul id="itemList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+</div>
+
+<script>
+    const list = document.getElementById("itemList");
+    let counter = 3; // to number new items
+
+    // Append new child node
+    function addItem() {
+        const li = document.createElement("li");
+        li.textContent = "Item " + counter;
+        list.appendChild(li);
+        counter++;
+    }
+
+    // Remove last child node
+    function removeItem() {
+        if(list.lastElementChild) {
+            list.removeChild(list.lastElementChild);
+        } else {
+            alert("No more items to remove!");
+        }
+    }
+
+    // Modify first child node
+    function modifyItem() {
+        if(list.firstElementChild) {
+            list.firstElementChild.textContent = "Modified Item 1";
+        }
+    }
+</script>
+
+</body>
+</html>
