@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditional Statements & Loops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .output {
+            background: white;
+            padding: 15px;
+            margin: 20px auto;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #aaa;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 8px 16px;
+            cursor: pointer;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Conditional Statements & Loops</h2>
+
+<div class="output" id="output">
+    Click the button to see conditional statements and loops in action!
+</div>
+
+<button onclick="runExamples()">Run Examples</button>
+
+<script>
+function runExamples() {
+    let output = "";
+
+    // Conditional Statements
+    let num = Math.floor(Math.random() * 20); // random number 0-19
+    output += "<b>Conditional Statements:</b><br>";
+    if(num < 5) {
+        output += num + " is less than 5<br>";
+    } else if(num <= 15) {
+        output += num + " is between 5 and 15<br>";
+    } else {
+        output += num + " is greater than 15<br>";
+    }
+
+    // For Loop
+    output += "<br><b>For Loop (0 to 4):</b><br>";
+    for(let i = 0; i < 5; i++) {
+        output += i + " ";
+    }
+
+    // While Loop
+    output += "<br><br><b>While Loop (5 to 8):</b><br>";
+    let j = 5;
+    while(j <= 8) {
+        output += j + " ";
+        j++;
+    }
+
+    // Do…While Loop
+    output += "<br><br><b>Do...While Loop (9 to 11):</b><br>";
+    let k = 9;
+    do {
+        output += k + " ";
+        k++;
+    } while(k <= 11);
+
+    // Display all output
+    document.getElementById("output").innerHTML = output;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation using JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            width: 350px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #aaa;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Form Validation Demo</h2>
+
+<form onsubmit="return validateForm()">
+    <input type="text" id="name" placeholder="Enter your name" oninput="checkName()">
+    <input type="email" id="email" placeholder="Enter your email" oninput="checkEmail()">
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+
+    if (name === "" || email === "") {
+        alert("All fields are required!");
+        return false; // Prevent form submission
+    }
+
+    if (!email.includes("@") || !email.includes(".")) {
+        alert("Please enter a valid email!");
+        return false;
+    }
+
+    alert("Form submitted successfully!");
+    return true; // Form can submit
+}
+
+// Real-time feedback on typing
+function checkName() {
+    let name = document.getElementById("name").value;
+    if (name.length < 3) {
+        console.log("Name too short");
+    }
+}
+
+function checkEmail() {
+    let email = document.getElementById("email").value;
+    if (!email.includes("@")) {
+        console.log("Email must contain '@'");
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User-defined Functions & Scope Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .output {
+            background: white;
+            padding: 15px;
+            margin: 20px auto;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #aaa;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 8px 16px;
+            cursor: pointer;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+<h2>User-defined Functions & Scope Demo</h2>
+
+<div class="output" id="output">
+    Click the button to run functions and see variable scopes!
+</div>
+
+<button onclick="runFunctions()">Run Demo</button>
+
+<script>
+function runFunctions() {
+    let output = "";
+
+    // 1. User-defined function
+    function greet(name) {
+        return "Hello, " + name + "!";
+    }
+    output += "<b>Function Output:</b><br>";
+    output += greet("Shivam") + "<br><br>";
+
+    // 2. var, let, const scope demo
+    output += "<b>Scope Demonstration:</b><br>";
+
+    var x = "I am var (function/global scoped)";
+    let y = "I am let (block scoped)";
+    const z = "I am const (block scoped)";
+
+    output += "Outside function: " + x + ", " + y + ", " + z + "<br>";
+
+    function scopeTest() {
+        var x = "Var inside function";
+        let y = "Let inside function";
+        const z = "Const inside function";
+        return "Inside function: " + x + ", " + y + ", " + z;
+    }
+
+    output += scopeTest();
+
+    document.getElementById("output").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
